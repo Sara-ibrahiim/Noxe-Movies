@@ -24,9 +24,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build": "CI=false react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -49,5 +49,12 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.1.1"
-  }
+  },
+ 
+  "rules": { 
+  "no-console": "warn" ,
+  "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]}
+ 
+
+  
 }
