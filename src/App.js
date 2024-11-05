@@ -10,7 +10,7 @@ import TvShow from './Components/TvShow/TvShow';
 import NotFound from './Components/NotFound/NotFound';
 import MoviesDetails from './Components/MoviesDetails/MoviesDetails';
 import {jwtDecode} from 'jwt-decode';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter ,createHashRouter} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 
@@ -29,7 +29,7 @@ function saveUserData() {
   
 }
 
-  let routers = createBrowserRouter([
+  let routers = createHashRouter([
     {path:'',element:<Layout userData={userData} setuserData={setuserData}/>,children:[
       {path: 'home',element:<ProtectedRoute> <Home/></ProtectedRoute>},
       {path: 'movies',element:<ProtectedRoute><Movies/> </ProtectedRoute>},
